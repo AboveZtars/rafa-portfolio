@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async function postMessageToApi(message: string): Promise<string> {
+async function postMessageToApi(message: string): Promise<{response: string}> {
   try {
     const response = await axios.post(
       "https://cv-llm-service.onrender.com/openai",
@@ -18,7 +18,7 @@ async function postMessageToApi(message: string): Promise<string> {
 export async function sendMessage(message: string): Promise<string> {
   try {
     const response = await postMessageToApi(message);
-    return response;
+    return response.response;
   } catch (error) {
     console.error("Error sending message:", error);
     return "An error";
