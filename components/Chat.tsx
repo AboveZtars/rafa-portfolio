@@ -2,6 +2,8 @@
 
 import {useState, useEffect, useRef} from "react";
 import {sendMessage} from "@/app/services/chatService";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
   id: number;
@@ -58,7 +60,7 @@ export default function Chat() {
                   : "bg-gray-200 text-gray-800"
               }`}
             >
-              {message.text}
+              <Markdown remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
             </span>
           </div>
         ))}
