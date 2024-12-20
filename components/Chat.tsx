@@ -4,6 +4,7 @@ import {useState, useEffect, useRef} from "react";
 import {sendMessage} from "@/app/services/chatService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import {Button} from "./Button";
 
 interface Message {
   id: number;
@@ -75,12 +76,9 @@ export default function Chat() {
             className="flex-grow px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Type your message..."
           />
-          <button
-            type="submit"
-            className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
+          <Button type="submit" variant="primary" size="md">
             Send
-          </button>
+          </Button>
         </div>
       </form>
     </div>
