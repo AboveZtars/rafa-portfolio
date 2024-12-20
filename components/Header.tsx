@@ -33,7 +33,7 @@ export default function Header() {
             }`}
           >
             <h1
-              className={`transition-all duration-1000 ease-in-out text-lime-700 w-fit ${
+              className={`transition-all duration-1000 ease-in-out text-lime-700 w-fit pt-2 ${
                 newsreader.className
               } ${isAnimated ? "text-5xl" : "text-7xl"}`}
             >
