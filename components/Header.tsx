@@ -1,10 +1,7 @@
 "use client";
-
-import Link from "next/link";
 import {Newsreader} from "next/font/google";
 import {useState, useEffect} from "react";
-import {buttonCss} from "@/lib/utils";
-
+import Navbar from "./Navbar";
 const newsreader = Newsreader({subsets: ["latin"]});
 export default function Header() {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -41,32 +38,9 @@ export default function Header() {
             </h1>
           </div>
         </div>
+
         <div className="flex justify-end w-full">
-          <nav
-            className={`transition-all duration-1000 ease-in-out content-center w-fit ${
-              isAnimated
-                ? "opacity-1000 translate-x-0"
-                : "opacity-0 translate-x-10"
-            }`}
-          >
-            <ul className="flex space-x-4 justify-between">
-              <li className="w-24 h-10 flex items-center justify-center">
-                <Link className={buttonCss} href="/">
-                  Home
-                </Link>
-              </li>
-              <li className="w-24 h-10 flex items-center justify-center">
-                <Link className={buttonCss} href="/about">
-                  About
-                </Link>
-              </li>
-              <li className="w-24 h-10 flex items-center justify-center">
-                <Link className={buttonCss} href="/projects">
-                  Projects
-                </Link>
-              </li>
-            </ul>
-          </nav>
+          <Navbar isAnimated={isAnimated} />
         </div>
       </div>
     </header>
