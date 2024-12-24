@@ -9,7 +9,7 @@ export default function Header() {
   useEffect(() => {
     setIsAnimated(false);
     const handleClick = () => {
-      setIsAnimated((prev) => !prev);
+      setIsAnimated((prev) => (!prev ? true : prev));
     };
 
     document.addEventListener("click", handleClick);

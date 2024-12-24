@@ -12,9 +12,19 @@ interface Message {
   sender: "user" | "bot";
 }
 
-export default function Chat() {
+interface ChatProps {
+  showChat?: boolean;
+}
+
+export default function Chat({showChat = false}: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
+  const [showAnimation, setShowAnimation] = useState(false);
+  useEffect(() => {
+    if (showChat) {
+      setShowAnimation(true);
+    }
+  }, [showChat]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -45,7 +55,11 @@ export default function Chat() {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-white rounded-lg shadow-md overflow-hidden">
+    <div
+      className={`w-full max-w-2xl bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-1000 ease-in-out ${
+        showAnimation ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <div className="h-96 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
           <div
