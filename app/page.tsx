@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen" onClick={handleClick}>
       <Header />
-      <main className="flex-grow flex items-center justify-center bg-gray-100">
+      <main className="flex-grow flex items-center justify-center">
         {showChat ? (
           <Chat showChat={showChat} />
         ) : (

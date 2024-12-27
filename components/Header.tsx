@@ -1,8 +1,9 @@
 "use client";
-import {Newsreader} from "next/font/google";
 import {useState, useEffect} from "react";
 import Navbar from "./Navbar";
+import {Newsreader} from "next/font/google";
 const newsreader = Newsreader({subsets: ["latin"]});
+
 export default function Header() {
   const [isAnimated, setIsAnimated] = useState(false);
 
@@ -17,7 +18,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white">
       <div className={`container mx-auto flex justify-between`}>
         <div
           className={`transition-all duration-1000 ease-in-out w-full ${
@@ -39,7 +40,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="flex justify-end w-full">
+        <div className={`flex justify-end w-full `}>
           <Navbar isAnimated={isAnimated} />
         </div>
       </div>

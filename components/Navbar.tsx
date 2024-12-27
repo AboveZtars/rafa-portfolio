@@ -26,7 +26,11 @@ const Navbar: React.FC<NavbarProps> = ({isAnimated = false}) => {
             color="secondary"
             key={item.label}
             href={item.path}
-            sx={{backgroundColor: "#426B1F", borderRadius: "8px"}}
+            sx={{
+              backgroundColor: "#426B1F",
+              borderRadius: "8px",
+              textTransform: "none",
+            }}
           >
             {item.label}
           </Button>
