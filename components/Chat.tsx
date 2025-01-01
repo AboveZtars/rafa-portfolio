@@ -5,9 +5,6 @@ import {sendMessage} from "@/app/services/chatService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {Button} from "./Button";
-import {Newsreader} from "next/font/google";
-
-const newsreader = Newsreader({subsets: ["latin"]});
 
 interface Message {
   id: number;

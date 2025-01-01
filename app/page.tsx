@@ -2,7 +2,7 @@
 import Header from "@/components/Header";
 import Chat from "@/components/Chat";
 import Footer from "@/components/Footer";
-import {use, useState, useEffect} from "react";
+import {useState, useEffect} from "react";
 import VariableFontAndCursor from "@/components/VariableFont";
 import {useRef} from "react";
 import {Newsreader} from "next/font/google";
