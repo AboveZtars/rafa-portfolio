@@ -5,6 +5,9 @@ import {sendMessage} from "@/app/services/chatService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {Button} from "./Button";
+import {Newsreader} from "next/font/google";
+
+const newsreader = Newsreader({subsets: ["latin"]});
 
 interface Message {
   id: number;
@@ -56,7 +59,7 @@ export default function Chat({showChat = false}: ChatProps) {
 
   return (
     <div
-      className={`w-full max-w-2xl bg-white rounded-lg shadow-md overflow-hidden transition-opacity duration-1000 ease-in-out ${
+      className={`w-full max-w-2xl bg-whitesand rounded-lg shadow-lg overflow-hidden transition-opacity duration-1000 ease-in-out ${
         showAnimation ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -71,8 +74,8 @@ export default function Chat({showChat = false}: ChatProps) {
             <span
               className={`inline-block p-2 rounded-lg ${
                 message.sender === "user"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200 text-gray-800"
+                  ? "bg-[#1F6B36] text-white" //2C2C2E
+                  : "bg-[#D0EBB9] text-gray-800"
               }`}
             >
               <Markdown remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
