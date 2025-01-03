@@ -2,6 +2,7 @@
 
 import {useState, useEffect, useRef} from "react";
 import {sendMessage} from "@/app/services/chatService";
+import {useBackendStatus} from "@/app/services/statusService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {Button} from "./Button";
@@ -20,6 +21,7 @@ export default function Chat({showChat = false}: ChatProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [showAnimation, setShowAnimation] = useState(false);
+  const isBackendAvailable = useBackendStatus();
   useEffect(() => {
     if (showChat) {
       setShowAnimation(true);
@@ -71,7 +73,7 @@ export default function Chat({showChat = false}: ChatProps) {
             <span
               className={`inline-block p-2 rounded-lg ${
                 message.sender === "user"
-                  ? "bg-[#1F6B36] text-white" //2C2C2E
+                  ? "bg-[#1F6B36] text-white"
                   : "bg-[#D0EBB9] text-gray-800"
               }`}
             >
@@ -89,9 +91,15 @@ export default function Chat({showChat = false}: ChatProps) {
             onChange={(e) => setInput(e.target.value)}
             className="flex-grow px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Type your message..."
+            disabled={!isBackendAvailable}
           />
-          <Button type="submit" variant="primary" size="md">
-            Send
+          <Button
+            type="submit"
+            variant="primary"
+            size="md"
+            disabled={!isBackendAvailable}
+          >
+            {isBackendAvailable ? "Send" : "Backend Unavailable"}
           </Button>
         </div>
       </form>
