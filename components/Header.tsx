@@ -4,18 +4,14 @@ import Navbar from "./Navbar";
 import {Newsreader} from "next/font/google";
 const newsreader = Newsreader({subsets: ["latin"]});
 
-export default function Header() {
+export default function Header({showAnimation}: {showAnimation: boolean}) {
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
-    setIsAnimated(false);
-    const handleClick = () => {
-      setIsAnimated((prev) => (!prev ? true : prev));
-    };
-
-    document.addEventListener("click", handleClick);
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
+    if (showAnimation) {
+      setIsAnimated(true);
+    }
+  }, [showAnimation]);
 
   return (
     <header className="bg-white">
