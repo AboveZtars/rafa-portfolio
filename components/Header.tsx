@@ -4,7 +4,11 @@ import Navbar from "./Navbar";
 import {Newsreader} from "next/font/google";
 const newsreader = Newsreader({subsets: ["latin"]});
 
-export default function Header({showAnimation}: {showAnimation: boolean}) {
+export default function Header({
+  showAnimation = true,
+}: {
+  showAnimation?: boolean;
+}) {
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
