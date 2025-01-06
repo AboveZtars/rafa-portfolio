@@ -16,12 +16,7 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [showInstructions, setShowInstructions] = useState(false);
   const [showChatBubble, setShowChatBubble] = useState(false);
-
-  //set is isHeaderAnimated to false when the page is loaded
-  // localStorage.clear();
-  // useEffect(() => {
-  //   localStorage.setItem("isHeaderAnimated", "false");
-  // }, []);
+  const [isHeaderAnimated, setIsHeaderAnimated] = useState(false);
 
   setTimeout(() => {
     setShowChatBubble(true);
@@ -32,6 +27,8 @@ export default function Home() {
 
   const handleClick = () => {
     setFadeOut(true);
+    setIsHeaderAnimated(true);
+    localStorage.setItem("isHeaderAnimated", "true");
     setShowChatBubble(false);
     setTimeout(() => {
       setShowChat(true);
@@ -40,7 +37,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header showAnimation={fadeOut} />
+      <Header showAnimation={isHeaderAnimated} />
       <main className="flex-grow flex items-center justify-center flex w-full">
         {showChat ? (
           <div className="flex flex-col items-center justify-center w-3/4">
