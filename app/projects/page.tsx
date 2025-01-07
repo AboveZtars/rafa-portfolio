@@ -17,19 +17,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "WinkGPT",
     description:
-      "A full-stack e-commerce platform built with Next.js and Node.js, featuring real-time inventory management and secure payment processing.",
+      "A Chatbot to order any kind of products from any store, made in Whatsapp.",
     image: "/projects/ecommerce.jpg",
-    technologies: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+    technologies: [
+      "BunJS",
+      "Whatsapp",
+      "Postgres",
+      "Redis",
+      "Langchain",
+      "OpenAI",
+      "DigitalOcean",
+    ],
     link: "https://github.com/yourusername/ecommerce",
   },
   {
-    title: "AI Chat Application",
+    title: "Yuri AI",
     description:
-      "An intelligent chat application powered by machine learning, enabling natural language conversations and automated responses.",
+      "A simple chatbot to help you request a ride from Yummy Rides in Venezuela and ask questions about yummy rides. Build specifically to be used in Whatsapp.",
     image: "/projects/chat.jpg",
-    technologies: ["React", "Python", "TensorFlow", "WebSocket"],
+    technologies: ["NodeJS", "MomentoCache", "Whatsapp", "StackAi", "OpenAI"],
     link: "https://github.com/yourusername/ai-chat",
   },
   {
