@@ -8,7 +8,7 @@ const newsreader = Newsreader({subsets: ["latin"]});
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header showAnimation={true} />
       <main className="flex-grow flex flex-col items-center p-8">
         <h1
           className={`text-5xl font-bold mb-12 text-lime-700 ${newsreader.className}`}

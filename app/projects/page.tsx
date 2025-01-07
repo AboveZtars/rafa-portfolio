@@ -45,7 +45,7 @@ const projects: Project[] = [
 export default function ProjectsPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
+      <Header showAnimation={true} />
       <main className="flex-grow container mx-auto px-4 py-16">
         <h1
           className={`text-5xl text-lime-700 text-center mb-16 ${newsreader.className}`}

@@ -9,9 +9,7 @@ export default function Header({
 }: {
   showAnimation?: boolean;
 }) {
-  const [isAnimated, setIsAnimated] = useState(
-    localStorage.getItem("isHeaderAnimated") === "true"
-  );
+  const [isAnimated, setIsAnimated] = useState(showAnimation);
   useEffect(() => {
     if (showAnimation) {
       setIsAnimated(true);
