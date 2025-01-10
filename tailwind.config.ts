@@ -58,6 +58,24 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        fadeInDown: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        fadeIn: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
         justifyCenterToStart: {
           "0%": {justifyContent: "center"},
           "100%": {justifyContent: "start"},
@@ -70,6 +88,7 @@ const config: Config = {
       animation: {
         "justify-center-to-start": "justifyCenterToStart 5s forwards",
         "justify-start-to-center": "justifyStartToCenter 5s forwards",
+        "fade-in-down": "fadeInDown 0.3s ease-out forwards",
       },
     },
   },

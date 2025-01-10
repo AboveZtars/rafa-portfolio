@@ -37,7 +37,7 @@ const projects: Project[] = [
       "A simple chatbot to help you request a ride from Yummy Rides in Venezuela and ask questions about yummy rides. Build specifically to be used in Whatsapp.",
     image: "/projects/yummyyuri.png",
     technologies: ["NodeJS", "MomentoCache", "Whatsapp", "StackAi", "OpenAI"],
-    link: "https://github.com/yourusername/ai-chat",
+    link: "https://api.whatsapp.com/send?phone=584241905742",
   },
   {
     title: "Task Management System",
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col h-full"
             >
               <div className="relative h-48 w-full">
                 <Image
@@ -75,7 +75,7 @@ export default function ProjectsPage() {
                   className="object-cover object-center"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-grow">
                 <h3
                   className={`text-2xl text-lime-700 font-medium mb-3 ${newsreader.className}`}
                 >
@@ -92,16 +92,18 @@ export default function ProjectsPage() {
                     </span>
                   ))}
                 </div>
-                {project.link && (
-                  <Link
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-lime-700 hover:bg-lime-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
-                  >
-                    View Project
-                  </Link>
-                )}
+                <div className="mt-auto">
+                  {project.link && (
+                    <Link
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-lime-700 hover:bg-lime-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
+                    >
+                      View Project
+                    </Link>
+                  )}
+                </div>
               </div>
             </div>
           ))}

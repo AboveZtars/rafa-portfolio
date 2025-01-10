@@ -6,11 +6,13 @@ import {useBackendStatus} from "@/app/services/statusService";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {Button} from "./Button";
+import {chatCTA} from "@/app/data/about";
 
 interface Message {
   id: number;
   text: string;
   sender: "user" | "bot";
+  animate?: boolean;
 }
 
 interface ChatProps {
@@ -22,11 +24,40 @@ export default function Chat({showChat = false}: ChatProps) {
   const [input, setInput] = useState("");
   const [showAnimation, setShowAnimation] = useState(false);
   const isBackendAvailable = useBackendStatus();
+  const [hasShownCTA, setHasShownCTA] = useState(false);
+
   useEffect(() => {
     if (showChat) {
       setShowAnimation(true);
     }
   }, [showChat]);
+
+  useEffect(() => {
+    if (isBackendAvailable && !hasShownCTA) {
+      const timer = setTimeout(() => {
+        const ctaMessage: Message = {
+          id: Date.now(),
+          text: chatCTA,
+          sender: "bot",
+          animate: false,
+        };
+        setMessages([ctaMessage]);
+        setHasShownCTA(true);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isBackendAvailable, hasShownCTA]);
+
+  useEffect(() => {
+    if (messages.length > 0) {
+      if (messages.every((message) => message.animate)) return;
+      setMessages((prevMessages) =>
+        prevMessages.map((message) => ({...message, animate: true}))
+      );
+    }
+  }, [messages]);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -39,7 +70,12 @@ export default function Chat({showChat = false}: ChatProps) {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage: Message = {id: Date.now(), text: input, sender: "user"};
+    const userMessage: Message = {
+      id: Date.now(),
+      text: input,
+      sender: "user",
+      animate: false,
+    };
     setMessages((prevMessages) => [...prevMessages, userMessage]);
     setInput("");
 
@@ -75,7 +111,7 @@ export default function Chat({showChat = false}: ChatProps) {
                 message.sender === "user"
                   ? "bg-[#1F6B36] text-white"
                   : "bg-[#D0EBB9] text-gray-800"
-              }`}
+              } ${message.animate ? "animate-fade-in-down" : ""}`}
             >
               <Markdown remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
             </span>

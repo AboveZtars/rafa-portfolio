@@ -77,7 +77,7 @@ export default function Home() {
               }`}
             >
               <Float amplitude={[10, 7, 10]} speed={0.3}>
-                <div className="relative" onClick={handleClick}>
+                <div className="relative cursor-pointer" onClick={handleClick}>
                   <ChatBubbleIcon
                     className="text-lime-600"
                     sx={{fontSize: 100}}

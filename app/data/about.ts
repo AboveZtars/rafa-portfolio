@@ -64,3 +64,11 @@ export const aboutData: AboutData = {
       "Relevant certifications in cloud computing and web development",
   },
 };
+
+export const chatCTA = `Hi there! 👋 Rafael is a Senior Software Engineer specializing in AI and chatbot development. With experience in both cloud infrastructure and full-stack development.\nI'd be happy to discuss:\n\n
+• AI projects and LLM implementations where Rafael worked\n
+• Information about the projects Rafael worked on\n
+• Information about the technologies Rafael worked with\n
+• Personal information about Rafael\n
+• How this chatbot was built\n
+What would you like to know about Rafael?`;
