@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
@@ -20,7 +19,7 @@ const projects: Project[] = [
     title: "WinkGPT",
     description:
       "A Chatbot to order any kind of products from any store, made in Whatsapp.",
-    image: "/projects/ecommerce.jpg",
+    image: "/projects/winkgpt2.png",
     technologies: [
       "BunJS",
       "Whatsapp",
@@ -30,13 +29,13 @@ const projects: Project[] = [
       "OpenAI",
       "DigitalOcean",
     ],
-    link: "https://github.com/yourusername/ecommerce",
+    link: "https://www.instagram.com/wink.vzla/",
   },
   {
     title: "Yuri AI",
     description:
       "A simple chatbot to help you request a ride from Yummy Rides in Venezuela and ask questions about yummy rides. Build specifically to be used in Whatsapp.",
-    image: "/projects/chat.jpg",
+    image: "/projects/yummyyuri.png",
     technologies: ["NodeJS", "MomentoCache", "Whatsapp", "StackAi", "OpenAI"],
     link: "https://github.com/yourusername/ai-chat",
   },
@@ -56,9 +55,9 @@ export default function ProjectsPage() {
       <Header showAnimation={true} />
       <main className="flex-grow container mx-auto px-4 py-16">
         <h1
-          className={`text-5xl text-lime-700 text-center mb-16 ${newsreader.className}`}
+          className={`text-5xl font-bold text-lime-700 text-center mb-16 ${newsreader.className}`}
         >
-          My Projects
+          Projects
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -71,7 +70,9 @@ export default function ProjectsPage() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 2}
+                  className="object-cover object-center"
                 />
               </div>
               <div className="p-6">

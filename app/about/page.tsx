@@ -2,6 +2,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {Newsreader} from "next/font/google";
+import {aboutData} from "../data/about";
 
 const newsreader = Newsreader({subsets: ["latin"]});
 
@@ -25,10 +26,7 @@ export default function About() {
               Personal Information
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
-              I&apos;m a passionate software engineer based in Venezuela,
-              dedicated to creating innovative solutions that make a difference.
-              When I&apos;m not coding, you can find me exploring new
-              technologies.
+              {aboutData.personalInfo.description}
             </p>
           </section>
 
@@ -42,13 +40,17 @@ export default function About() {
             <div className="space-y-6">
               <div>
                 <h3 className={`text-2xl font-medium ${newsreader.className}`}>
-                  Senior Software Engineer
+                  {aboutData.professionalExperience.title}
                 </h3>
-                <p className="text-gray-600 mt-2">Current Position</p>
+                <p className="text-gray-600 mt-2">
+                  {aboutData.professionalExperience.status}
+                </p>
                 <ul className="list-disc list-inside mt-4 text-gray-700 space-y-2">
-                  <li>Leading development of scalable web applications</li>
-                  <li>Architecting cloud-native solutions</li>
-                  <li>Mentoring junior developers</li>
+                  {aboutData.professionalExperience.responsibilities.map(
+                    (responsibility, index) => (
+                      <li key={index}>{responsibility}</li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>
@@ -69,18 +71,14 @@ export default function About() {
                   Skills
                 </h3>
                 <div className="flex flex-wrap gap-3">
-                  <span className="px-4 py-2 bg-lime-100 text-lime-700 rounded-full font-medium transition-colors hover:bg-lime-200">
-                    React
-                  </span>
-                  <span className="px-4 py-2 bg-lime-100 text-lime-700 rounded-full font-medium transition-colors hover:bg-lime-200">
-                    TypeScript
-                  </span>
-                  <span className="px-4 py-2 bg-lime-100 text-lime-700 rounded-full font-medium transition-colors hover:bg-lime-200">
-                    Node.js
-                  </span>
-                  <span className="px-4 py-2 bg-lime-100 text-lime-700 rounded-full font-medium transition-colors hover:bg-lime-200">
-                    AWS
-                  </span>
+                  {aboutData.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-4 py-2 bg-lime-100 text-lime-700 rounded-full font-medium transition-colors hover:bg-lime-200"
+                    >
+                      {skill.name}
+                    </span>
+                  ))}
                 </div>
               </div>
               <div>
@@ -90,9 +88,9 @@ export default function About() {
                   Education
                 </h3>
                 <p className="text-gray-700 text-lg">
-                  Bachelor&apos;s Degree in Computer Science
+                  {aboutData.education.degree}
                   <br />
-                  Relevant certifications in cloud computing and web development
+                  {aboutData.education.additionalInfo}
                 </p>
               </div>
             </div>
