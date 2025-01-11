@@ -94,7 +94,7 @@ export default function Chat({showChat = false}: ChatProps) {
 
   return (
     <div
-      className={`w-full max-w-2xl bg-whitesand rounded-lg shadow-lg overflow-hidden transition-opacity duration-1000 ease-in-out ${
+      className={`w-full max-w-2xl bg-whitesand dark:bg-green-950 rounded-lg shadow-lg overflow-hidden transition-all duration-1000 ease-in-out ${
         showAnimation ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -107,10 +107,10 @@ export default function Chat({showChat = false}: ChatProps) {
             }`}
           >
             <span
-              className={`inline-block p-2 rounded-lg ${
+              className={`inline-block p-2 rounded-lg transition-all duration-1000 max-w-md ${
                 message.sender === "user"
-                  ? "bg-[#1F6B36] text-white"
-                  : "bg-[#D0EBB9] text-gray-800"
+                  ? "bg-[#1F6B36] dark:bg-lime-900 text-white "
+                  : "bg-[#D0EBB9] dark:bg-slate-700 text-gray-800 dark:text-white "
               } ${message.animate ? "animate-fade-in-down" : ""}`}
             >
               <Markdown remarkPlugins={[remarkGfm]}>{message.text}</Markdown>
@@ -119,13 +119,16 @@ export default function Chat({showChat = false}: ChatProps) {
         ))}
         <div ref={messagesEndRef} />
       </div>
-      <form onSubmit={handleSubmit} className="border-t p-4">
+      <form
+        onSubmit={handleSubmit}
+        className="border-t dark:border-lime-700 p-4 transition-colors duration-1000"
+      >
         <div className="flex space-x-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-grow px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-grow text-black px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-1000"
             placeholder="Type your message..."
             disabled={!isBackendAvailable}
           />

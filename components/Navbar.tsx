@@ -1,7 +1,6 @@
 import React from "react";
-import {Button} from "@mui/material";
-import {ThemeProvider} from "@emotion/react";
-import {mainTheme} from "@/lib/theme";
+import Link from "next/link";
+import DarkModeToggle from "./DarkModeSwitch";
 
 interface NavbarProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isAnimated?: boolean;
@@ -16,26 +15,35 @@ const Navbar: React.FC<NavbarProps> = ({isAnimated = false}) => {
 
   return (
     <div
-      className={`transition-all duration-1000 ease-in-out content-center w-fit space-x-4 ${
+      className={`flex items-center transition-all duration-1000 ease-in-out w-fit space-x-4 ${
         isAnimated ? "opacity-1000 translate-x-0" : "opacity-0 translate-x-10"
       }`}
     >
-      <ThemeProvider theme={mainTheme}>
-        {menuItems.map((item) => (
-          <Button
-            color="secondary"
-            key={item.label}
-            href={item.path}
-            sx={{
-              backgroundColor: "#426B1F",
-              borderRadius: "8px",
-              textTransform: "none",
-            }}
-          >
-            {item.label}
-          </Button>
-        ))}
-      </ThemeProvider>
+      {menuItems.map((item) => (
+        <Link
+          key={item.label}
+          href={item.path}
+          className={`
+            inline-flex items-center px-4 py-2
+            text-sm font-medium
+            rounded-lg
+            text-white
+            transition-colors
+            duration-1000
+            bg-lime-700
+            hover:bg-lime-600
+            dark:bg-lime-300
+            dark:hover:bg-lime-400
+            dark:text-black
+            `}
+          tabIndex={0}
+          role="button"
+          aria-label={`Navigate to ${item.label}`}
+        >
+          {item.label}
+        </Link>
+      ))}
+      <DarkModeToggle />
     </div>
   );
 };

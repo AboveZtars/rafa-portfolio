@@ -51,60 +51,72 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-whitesand dark:bg-slate-900 transition-colors duration-1000">
       <Header showAnimation={true} />
       <main className="flex-grow container mx-auto px-4 py-16">
-        <h1
-          className={`text-5xl font-bold text-lime-700 text-center mb-16 ${newsreader.className}`}
+        <div
+          className={`text-center mb-6 text-lime-700 dark:text-lime-300 transition-colors duration-1000`}
         >
-          Projects
-        </h1>
+          <h1 className={`text-5xl font-bold   ${newsreader.className}`}>
+            Projects
+          </h1>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
               className="bg-white rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex flex-col h-full"
             >
-              <div className="relative h-48 w-full">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={index < 2}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3
-                  className={`text-2xl text-lime-700 font-medium mb-3 ${newsreader.className}`}
+              {project.link && (
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col h-full focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 rounded-lg"
+                  aria-label={`View ${project.title} project`}
                 >
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-lime-50 text-lime-700 rounded-full text-sm border border-lime-200"
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      priority={index < 2}
+                      className="object-cover object-center"
+                    />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3
+                      className={`text-2xl text-lime-700 font-medium mb-3 ${newsreader.className}`}
                     >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-auto">
-                  {project.link && (
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block bg-lime-700 hover:bg-lime-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
-                    >
-                      View Project
-                    </Link>
-                  )}
-                </div>
-              </div>
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="px-3 py-1 bg-lime-50 text-lime-700 rounded-full text-sm border border-lime-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-auto">
+                      {project.link && (
+                        <Link
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block bg-lime-700 hover:bg-lime-800 text-white px-4 py-2 rounded-md transition-colors duration-300"
+                        >
+                          View Project
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              )}
             </div>
           ))}
         </div>

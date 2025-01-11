@@ -36,13 +36,13 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-whitesand dark:bg-slate-900 transition-colors duration-1000">
       <Header showAnimation={isHeaderAnimated} />
       <main className="flex-grow flex items-center justify-center flex w-full">
         {showChat ? (
           <div className="flex flex-col items-center justify-center w-3/4">
             <p
-              className={`text-lime-700 text-3xl w-fit mb-20 transition-opacity duration-1000 ease-in-out ${
+              className={`text-lime-700 dark:text-lime-300 text-3xl w-fit mb-20 transition-all duration-1000 ease-in-out ${
                 newsreader.className
               } ${showInstructions ? "opacity-100" : "opacity-0"}`}
             >

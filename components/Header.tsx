@@ -17,7 +17,7 @@ export default function Header({
   }, [showAnimation]);
 
   return (
-    <header className="bg-white">
+    <header className="bg-whitesand dark:bg-gray-800 transition-colors duration-1000">
       <div className={`container mx-auto flex justify-between`}>
         <div
           className={`transition-all duration-1000 ease-in-out w-full ${
@@ -30,7 +30,7 @@ export default function Header({
             }`}
           >
             <h1
-              className={`transition-all duration-1000 ease-in-out text-lime-700 w-fit pt-2 ${
+              className={`transition-all duration-1000 ease-in-out text-lime-700 dark:text-lime-300 w-fit pt-2 ${
                 newsreader.className
               } ${isAnimated ? "text-5xl" : "text-7xl"}`}
             >
