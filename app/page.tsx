@@ -63,7 +63,7 @@ export default function Home() {
               <span className="text-5xl">{"Building the backbone of "}</span>
               <VariableFontAndCursor
                 label=" innovation."
-                className="text-5xl sm:text-7xl md:text-5xl text-lime-700 px-4"
+                className="text-5xl sm:text-7xl md:text-5xl text-lime-700 dark:text-lime-300 px-4"
                 fontVariationMapping={{
                   y: {name: "wght", min: 100, max: 900},
                   x: {name: "slnt", min: 0, max: -10},
