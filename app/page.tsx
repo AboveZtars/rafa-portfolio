@@ -38,7 +38,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-whitesand to-gray-100 dark:from-slate-900 dark:to-slate-800 transition-colors duration-1000">
+    <div className="flex flex-col min-h-screen bg-whitesand/80 dark:bg-slate-900/80  transition-colors duration-1000">
       <Header />
       <main className="flex-grow flex items-center justify-center w-full px-4 sm:px-6 lg:px-8">
         {showChat ? (
