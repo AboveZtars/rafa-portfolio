@@ -1,28 +1,28 @@
-import {Github, Linkedin, Mail, Twitter} from "lucide-react";
 import Link from "next/link";
+import {GitHub, LinkedIn, Mail, X} from "@mui/icons-material";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      icon: <Github className="w-5 h-5" />,
-      href: "https://github.com/rafaelmolina",
+      icon: <GitHub className="w-5 h-5" />,
+      href: "https://github.com/AboveZtars",
       label: "GitHub",
     },
     {
-      icon: <Linkedin className="w-5 h-5" />,
-      href: "https://linkedin.com/in/rafaelmolina",
+      icon: <LinkedIn className="w-5 h-5" />,
+      href: "https://www.linkedin.com/in/rafael-molina-6649ab66/",
       label: "LinkedIn",
     },
     {
-      icon: <Twitter className="w-5 h-5" />,
-      href: "https://twitter.com/rafaelmolina",
+      icon: <X className="w-5 h-5" />,
+      href: "https://x.com/spoonkycat",
       label: "Twitter",
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      href: "mailto:contact@rafaelmolina.com",
+      href: "mailto:rafael@molina-aquino.com",
       label: "Email",
     },
   ];
