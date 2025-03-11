@@ -3,9 +3,7 @@ import Link from "next/link";
 import DarkModeToggle from "./DarkModeSwitch";
 import {usePathname} from "next/navigation";
 
-interface NavbarProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = () => {
   const pathname = usePathname();
 
   const menuItems = [

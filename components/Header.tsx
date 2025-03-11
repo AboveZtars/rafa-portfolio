@@ -1,5 +1,4 @@
 "use client";
-import {useState, useEffect} from "react";
 import Navbar from "./Navbar";
 import {Newsreader} from "next/font/google";
 import Link from "next/link";

@@ -5,7 +5,7 @@ import {useState, useEffect} from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import {Newsreader} from "next/font/google";
-import {ExternalLink, ChevronRight} from "lucide-react";
+import {ChevronRight} from "lucide-react";
 
 const newsreader = Newsreader({subsets: ["latin"]});
 
