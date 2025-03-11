@@ -2,45 +2,31 @@
 import {useState, useEffect} from "react";
 import Navbar from "./Navbar";
 import {Newsreader} from "next/font/google";
+import Link from "next/link";
+
 const newsreader = Newsreader({subsets: ["latin"]});
 
-export default function Header({
-  showAnimation = true,
-}: {
-  showAnimation?: boolean;
-}) {
-  const [isAnimated, setIsAnimated] = useState(showAnimation);
-  useEffect(() => {
-    if (showAnimation) {
-      setIsAnimated(true);
-    }
-  }, [showAnimation]);
-
+export default function Header() {
   return (
-    <header className="bg-whitesand dark:bg-gray-800 transition-colors duration-1000">
-      <div className={`container mx-auto flex justify-between`}>
-        <div
-          className={`transition-all duration-1000 ease-in-out w-full ${
-            isAnimated ? "translate-x-0" : "translate-x-1/2"
-          }`}
-        >
-          <div
-            className={`transition-all duration-1000 flex justify-center ${
-              isAnimated ? "-translate-x-1/4" : ""
-            }`}
+    <header className="bg-transparent transition-colors duration-1000 py-4 sticky top-0 z-50 backdrop-blur-sm bg-whitesand/80 dark:bg-slate-900/80">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
+        <div>
+          <Link
+            href="/"
+            className="flex items-center"
+            tabIndex={0}
+            aria-label="Go to homepage"
           >
             <h1
-              className={`transition-all duration-1000 ease-in-out text-lime-700 dark:text-lime-300 w-fit pt-2 ${
-                newsreader.className
-              } ${isAnimated ? "text-5xl" : "text-7xl"}`}
+              className={`text-lime-700 dark:text-lime-300 ${newsreader.className} text-3xl sm:text-4xl`}
             >
               Rafael Molina
             </h1>
-          </div>
+          </Link>
         </div>
 
-        <div className={`flex justify-end w-full `}>
-          <Navbar isAnimated={isAnimated} />
+        <div className="mt-4 sm:mt-0">
+          <Navbar />
         </div>
       </div>
     </header>
