@@ -42,14 +42,6 @@ const projects: Project[] = [
     technologies: ["NodeJS", "MomentoCache", "Whatsapp", "StackAi", "OpenAI"],
     link: "https://api.whatsapp.com/send?phone=584241905742",
   },
-  {
-    title: "Task Management System",
-    description:
-      "A collaborative task management system with real-time updates, team collaboration features, and analytics dashboard.",
-    image: "/projects/tasks.jpg",
-    technologies: ["React", "Firebase", "TypeScript", "Material-UI"],
-    link: "https://github.com/yourusername/task-manager",
-  },
 ];
 
 export default function ProjectsPage() {
