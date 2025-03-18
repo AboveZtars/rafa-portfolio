@@ -104,9 +104,12 @@ export default function About() {
                     boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
                   }}
                 >
-                  <User
-                    size={72}
-                    className="text-lime-600/50 dark:text-lime-400/50 transition-colors duration-1000"
+                  <Image
+                    src="/about/profile.jpeg"
+                    alt="Rafael's profile picture"
+                    fill={true}
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    priority
                   />
                 </motion.div>
 
@@ -316,10 +319,10 @@ export default function About() {
               animate={{opacity: 1}}
               transition={{duration: 0.5}}
             >
-              When I'm not coding, I enjoy exploring new technologies,
-              contributing to open-source projects, and staying updated with the
-              latest trends in software development. I'm particularly interested
-              in AI and machine learning applications.
+              I'm particularly interested in AI 🤖, backend development of
+              applications and obsessing over finding innovative solutions. In
+              my free time, I enjoy playing video games 🎮 and traveling to
+              explore new places 🌍.
             </motion.p>
           </motion.section>
         </motion.div>
