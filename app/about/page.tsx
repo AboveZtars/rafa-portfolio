@@ -136,8 +136,8 @@ export default function About() {
                     whileHover={{
                       boxShadow:
                         "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                      backgroundColor: "rgba(255, 255, 255, 0.8)",
-                      borderColor: "rgba(255, 255, 255, 0.7)",
+                      backgroundColor: "rgba(24, 111, 37, 0.11)",
+                      borderColor: "rgba(255, 255, 255, 0)",
                     }}
                     transition={{duration: 0.3}}
                   >
