@@ -105,7 +105,7 @@ export default function ProjectsPage() {
 
               <div className="p-6 flex flex-col flex-grow dark:text-gray-200 transition-colors duration-1000">
                 <h3
-                  className={`text-2xl text-lime-700 dark:text-lime-300 font-medium mb-3 ${newsreader.className}`}
+                  className={`text-2xl text-orange dark:text-orange-light font-medium mb-3 ${newsreader.className}`}
                 >
                   {project.title}
                 </h3>
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="inline-flex items-center justify-center px-4 py-1 h-7 bg-lime-50 text-lime-700 border border-lime-200 rounded-full text-sm dark:bg-slate-700 dark:text-lime-200 dark:border-slate-600 whitespace-nowrap"
+                      className="inline-flex items-center justify-center px-4 py-1 h-7 bg-orange/10 text-orange border border-orange/20 rounded-full text-sm dark:bg-orange-dark/30 dark:text-orange-light dark:border-orange-light/20 whitespace-nowrap"
                     >
                       {tech}
                     </span>
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-lime-700 hover:bg-lime-800 dark:bg-lime-600 dark:hover:bg-lime-700 text-white px-4 py-2 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
+                      className="inline-flex items-center gap-2 bg-orange hover:bg-orange-light dark:bg-orange-light dark:hover:bg-orange text-white px-4 py-2 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2"
                       aria-label={`View ${project.title} project`}
                       tabIndex={0}
                     >

@@ -7,7 +7,7 @@ const newsreader = Newsreader({subsets: ["latin"]});
 
 export default function Header() {
   return (
-    <header className="bg-transparent transition-colors duration-1000 py-4 sticky top-0 z-50 backdrop-blur-sm bg-whitesand/80 dark:bg-slate-900/80">
+    <header className="bg-transparent transition-colors duration-1000 py-4 sticky top-0 z-50 backdrop-blur-sm bg-sand/80 dark:bg-slate-900/80">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center">
         <div>
           <Link
@@ -17,7 +17,7 @@ export default function Header() {
             aria-label="Go to homepage"
           >
             <h1
-              className={`text-lime-700 dark:text-lime-300 ${newsreader.className} text-3xl sm:text-4xl`}
+              className={`text-orange dark:text-orange-light ${newsreader.className} text-3xl sm:text-4xl`}
             >
               Rafael Molina
             </h1>

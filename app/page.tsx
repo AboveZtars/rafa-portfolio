@@ -11,7 +11,7 @@ export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="flex flex-col min-h-screen bg-whitesand/80 dark:bg-slate-900/80 transition-colors duration-1000">
+    <div className="flex flex-col min-h-screen bg-sand dark:bg-slate-900/80 transition-colors duration-1000">
       <Header />
       <main className="flex-grow flex items-center justify-center w-full">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ export default function Home() {
             className={`w-full mx-auto rounded-lg ${newsreader.className} py-16 sm:py-24 relative overflow-hidden`}
             ref={containerRef}
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(148,163,184,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(148,163,184,0.05),transparent_70%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(250,129,47,0.1),transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(250,129,47,0.05),transparent_70%)]"></div>
 
             <div className="relative z-10 flex flex-col items-center justify-center">
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-8">
@@ -28,7 +28,7 @@ export default function Home() {
                 </span>
                 <VariableFontAndCursor
                   label="innovation."
-                  className="text-lime-700 dark:text-lime-300 inline-block"
+                  className="text-orange dark:text-orange-light inline-block"
                   fontVariationMapping={{
                     y: {name: "wght", min: 100, max: 900},
                     x: {name: "slnt", min: 0, max: -10},
@@ -45,7 +45,7 @@ export default function Home() {
               <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   href="/about"
-                  className="px-6 py-3 bg-lime-700 hover:bg-lime-600 text-white rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-opacity-50"
+                  className="px-6 py-3 bg-orange hover:bg-orange-light text-white rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-light focus:ring-opacity-50"
                   tabIndex={0}
                   aria-label="Learn more about Rafael"
                 >
@@ -53,7 +53,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/projects"
-                  className="px-6 py-3 bg-transparent border-2 border-lime-700 dark:border-lime-300 text-lime-700 dark:text-lime-300 hover:bg-lime-700/10 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-opacity-50"
+                  className="px-6 py-3 bg-transparent border-2 border-orange dark:border-orange-light text-orange dark:text-orange-light hover:bg-orange/10 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-light focus:ring-opacity-50"
                   tabIndex={0}
                   aria-label="View projects"
                 >

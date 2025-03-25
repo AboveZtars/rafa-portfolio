@@ -38,13 +38,13 @@ const DarkModeToggle = () => {
       tabIndex={0}
       className="relative p-2 rounded-lg transition-all duration-300 
                 bg-gray-200/50 dark:bg-gray-700/50 hover:bg-gray-200 dark:hover:bg-gray-700 
-                focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-opacity-50"
+                focus:outline-none focus:ring-2 focus:ring-orange focus:ring-opacity-50"
       onKeyDown={(e) => e.key === "Enter" && handleToggle()}
     >
       <div className="relative w-5 h-5">
         <Sun
           className={`w-5 h-5 absolute inset-0 transition-all duration-300 transform 
-                     text-lime-700 dark:text-lime-300
+                     text-orange dark:text-orange-light
                      ${
                        isDarkMode
                          ? "scale-0 rotate-90 opacity-0"
@@ -54,7 +54,7 @@ const DarkModeToggle = () => {
         />
         <Moon
           className={`w-5 h-5 absolute inset-0 transition-all duration-300 transform 
-                     text-lime-700 dark:text-lime-300
+                     text-orange dark:text-orange-light
                      ${
                        isDarkMode
                          ? "scale-100 rotate-0 opacity-100"

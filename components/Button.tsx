@@ -15,15 +15,15 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-opacity-50";
+    "rounded-lg transition-all duration-300 font-medium inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-orange focus:ring-opacity-50";
 
   const variants = {
     primary:
-      "bg-lime-700 text-white hover:bg-lime-600 dark:bg-lime-600 dark:hover:bg-lime-500 shadow-md hover:shadow-lg",
+      "bg-orange text-white hover:bg-orange-light dark:bg-orange-light dark:hover:bg-orange shadow-md hover:shadow-lg",
     secondary:
       "bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 shadow-md hover:shadow-lg",
     outline:
-      "bg-transparent border-2 border-lime-700 text-lime-700 hover:bg-lime-700/10 dark:border-lime-300 dark:text-lime-300 dark:hover:bg-lime-300/10",
+      "bg-transparent border-2 border-orange text-orange hover:bg-orange/10 dark:border-orange-light dark:text-orange-light dark:hover:bg-orange-light/10",
   };
 
   const sizes = {

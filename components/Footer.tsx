@@ -28,7 +28,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="transition-colors duration-1000 bg-gray-100 dark:bg-slate-800 py-8 border-t border-gray-200 dark:border-gray-700">
+    <footer className="transition-colors duration-1000 bg-sand/50 dark:bg-slate-800 py-8 border-t border-orange/20 dark:border-gray-700">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -42,7 +42,7 @@ export default function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-gray-600 hover:text-lime-700 dark:text-gray-400 dark:hover:text-lime-300 transition-colors duration-300"
+                className="text-gray-600 hover:text-orange dark:text-gray-400 dark:hover:text-orange-light transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}

@@ -95,7 +95,7 @@ export default function About() {
               <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
                 {/* Profile Image Container with Animation */}
                 <motion.div
-                  className="w-40 h-40 md:w-52 md:h-52 relative rounded-full overflow-hidden border-4 border-white/80 dark:border-slate-700/80 shadow-lg bg-gradient-to-br from-lime-50 to-lime-100 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center"
+                  className="w-40 h-40 md:w-52 md:h-52 relative rounded-full overflow-hidden border-4 border-white/80 dark:border-slate-700/80 shadow-lg bg-gradient-to-br from-orange-light/20 to-orange/20 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center"
                   initial={{scale: 0.8, opacity: 0}}
                   animate={{scale: 1, opacity: 1}}
                   transition={{duration: 0.5, delay: 0.2}}
@@ -120,14 +120,14 @@ export default function About() {
                   transition={{duration: 0.5, delay: 0.3}}
                 >
                   <h1
-                    className={`text-4xl md:text-5xl lg:text-6xl font-bold ${newsreader.className} text-gray-600 dark:text-lime-300 mb-4 tracking-tight`}
+                    className={`text-4xl md:text-5xl lg:text-6xl font-bold ${newsreader.className} text-gray-600 dark:text-orange-light mb-4 tracking-tight`}
                   >
                     About Rafael
                   </h1>
                   <div className="flex items-center justify-center md:justify-start gap-2 text-gray-700 dark:text-gray-300 mb-5 font-medium">
                     <MapPin
                       size={18}
-                      className="text-lime-600 dark:text-lime-400"
+                      className="text-orange dark:text-orange-light"
                     />
                     <span>Venezuela</span>
                   </div>
@@ -165,8 +165,8 @@ export default function About() {
             tabIndex={0}
             aria-labelledby="experience-heading"
           >
-            <div className="flex items-center gap-3 mb-8 text-lime-700 dark:text-lime-300 transition-colors duration-1000">
-              <div className="p-2.5 bg-lime-100 dark:bg-lime-900/50 rounded-lg">
+            <div className="flex items-center gap-3 mb-8 text-orange dark:text-orange-light transition-colors duration-1000">
+              <div className="p-2.5 bg-orange/10 dark:bg-orange-dark/30 rounded-lg">
                 <Briefcase className="h-6 w-6" aria-hidden="true" />
               </div>
               <h2
@@ -179,12 +179,12 @@ export default function About() {
 
             <div className="space-y-6">
               <motion.div
-                className="relative pl-8 border-l-2 border-lime-300 dark:border-lime-700"
+                className="relative pl-8 border-l-2 border-orange-light dark:border-orange"
                 initial={{opacity: 0, x: -10}}
                 animate={{opacity: 1, x: 0}}
                 transition={{duration: 0.5, delay: 0.2}}
               >
-                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-lime-500 dark:bg-lime-400 shadow-md shadow-lime-200 dark:shadow-lime-900/30"></div>
+                <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-orange dark:bg-orange-light shadow-md shadow-orange-light/20 dark:shadow-orange-dark/30"></div>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
                   <div
                     className={`text-gray-900 dark:text-white transition-colors duration-1000 ${newsreader.className}`}
@@ -195,7 +195,7 @@ export default function About() {
                       {aboutData.professionalExperience.title}
                     </h3>
                   </div>
-                  <div className="flex items-center gap-2 text-lime-600 dark:text-lime-400 font-medium mt-2 md:mt-0 bg-lime-50 dark:bg-lime-900/30 px-3 py-1 rounded-full">
+                  <div className="flex items-center gap-2 text-orange dark:text-orange-light font-medium mt-2 md:mt-0 bg-orange/10 dark:bg-orange-dark/30 px-3 py-1 rounded-full">
                     <Calendar size={16} />
                     <span>{aboutData.professionalExperience.status}</span>
                   </div>
@@ -211,7 +211,7 @@ export default function About() {
                         transition={{duration: 0.3, delay: 0.1 * index}}
                         whileHover={{x: 5}}
                       >
-                        <ChevronRight className="h-5 w-5 text-lime-500 dark:text-lime-400 flex-shrink-0 mt-0.5 group-hover:text-lime-600 dark:group-hover:text-lime-300 transition-colors" />
+                        <ChevronRight className="h-5 w-5 text-orange dark:text-orange-light flex-shrink-0 mt-0.5 group-hover:text-orange-light dark:group-hover:text-orange transition-colors" />
                         <span className="group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
                           {responsibility}
                         </span>
@@ -234,8 +234,8 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               {/* Skills */}
               <div>
-                <div className="flex items-center gap-3 mb-6 text-lime-700 dark:text-lime-300 transition-colors duration-1000">
-                  <div className="p-2.5 bg-lime-100 dark:bg-lime-900/50 rounded-lg">
+                <div className="flex items-center gap-3 mb-6 text-orange dark:text-orange-light transition-colors duration-1000">
+                  <div className="p-2.5 bg-orange/10 dark:bg-orange-dark/30 rounded-lg">
                     <Code className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <h3
@@ -249,7 +249,7 @@ export default function About() {
                   {aboutData.skills.map((skill, index) => (
                     <motion.span
                       key={index}
-                      className="px-4 py-2 bg-lime-100/80 dark:bg-lime-900/50 text-lime-700 dark:text-lime-300 rounded-full font-medium transition-all duration-300 hover:bg-lime-200 dark:hover:bg-lime-800 hover:shadow-md"
+                      className="px-4 py-2 bg-orange/10 dark:bg-orange-dark/30 text-orange dark:text-orange-light rounded-full font-medium transition-all duration-300 hover:bg-orange/20 dark:hover:bg-orange-dark/40 hover:shadow-md"
                       initial={{opacity: 0, scale: 0.9}}
                       animate={{opacity: 1, scale: 1}}
                       transition={{duration: 0.3, delay: 0.05 * index}}
@@ -263,8 +263,8 @@ export default function About() {
 
               {/* Education */}
               <div>
-                <div className="flex items-center gap-3 mb-6 text-lime-700 dark:text-lime-300 transition-colors duration-1000">
-                  <div className="p-2.5 bg-lime-100 dark:bg-lime-900/50 rounded-lg">
+                <div className="flex items-center gap-3 mb-6 text-orange dark:text-orange-light transition-colors duration-1000">
+                  <div className="p-2.5 bg-orange/10 dark:bg-orange-dark/30 rounded-lg">
                     <GraduationCap className="h-6 w-6" aria-hidden="true" />
                   </div>
                   <h3
@@ -302,8 +302,8 @@ export default function About() {
             tabIndex={0}
             aria-labelledby="personal-heading"
           >
-            <div className="flex items-center gap-3 mb-6 text-lime-700 dark:text-lime-300 transition-colors duration-1000">
-              <div className="p-2.5 bg-lime-100 dark:bg-lime-900/50 rounded-lg">
+            <div className="flex items-center gap-3 mb-6 text-orange dark:text-orange-light transition-colors duration-1000">
+              <div className="p-2.5 bg-orange/10 dark:bg-orange-dark/30 rounded-lg">
                 <User className="h-6 w-6" aria-hidden="true" />
               </div>
               <h2
@@ -331,7 +331,7 @@ export default function About() {
         <AnimatePresence>
           {showScrollTop && (
             <motion.button
-              className="fixed bottom-6 right-6 p-3 bg-lime-500 dark:bg-lime-600 text-white rounded-full shadow-lg z-50 hover:bg-lime-600 dark:hover:bg-lime-500 focus:outline-none focus:ring-2 focus:ring-lime-400 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
+              className="fixed bottom-6 right-6 p-3 bg-orange dark:bg-orange-light text-white rounded-full shadow-lg z-50 hover:bg-orange-light dark:hover:bg-orange focus:outline-none focus:ring-2 focus:ring-orange focus:ring-offset-2 dark:focus:ring-offset-gray-800"
               onClick={handleScrollToTop}
               initial={{opacity: 0, scale: 0.5}}
               animate={{opacity: 1, scale: 1}}

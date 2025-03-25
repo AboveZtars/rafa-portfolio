@@ -30,10 +30,10 @@ const Navbar: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = () => {
                 duration-300
                 ${
                   isActive
-                    ? "bg-lime-700 text-white dark:bg-lime-300 dark:text-black"
-                    : "text-gray-700 hover:bg-lime-700/10 dark:text-gray-300 dark:hover:bg-lime-300/10"
+                    ? "bg-orange text-white dark:bg-orange-light dark:text-black"
+                    : "text-gray-700 hover:bg-orange/10 dark:text-gray-300 dark:hover:bg-orange-light/10"
                 }
-                focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-opacity-50
+                focus:outline-none focus:ring-2 focus:ring-orange focus:ring-opacity-50
               `}
               tabIndex={0}
               role="button"

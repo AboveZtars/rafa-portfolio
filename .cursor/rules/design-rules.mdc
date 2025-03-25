@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Rules for web design
+Color pallette:
+#FEF3E2 - Light background
+#FAB12F - Secondary color
+#FA812F - Secondary color
+#FA4032 - Create contrast

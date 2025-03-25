@@ -155,14 +155,14 @@ export default function Chat({showChat = false}: ChatProps) {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="border-t dark:border-lime-700 p-4 transition-colors duration-1000"
+          className="border-t dark:border-orange p-4 transition-colors duration-1000"
         >
           <div className="flex space-x-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="flex-grow text-black px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-1000"
+              className="flex-grow text-black px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:ring-opacity-50 transition-all duration-1000"
               placeholder="Type your message..."
               disabled={!isBackendAvailable}
             />

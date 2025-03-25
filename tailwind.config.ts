@@ -11,6 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        sand: "#FEF3E2",
+        orange: {
+          light: "#FAB12F",
+          DEFAULT: "#FA812F",
+          dark: "#FA4032",
+        },
         whitesand: "#FDFAF5",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
