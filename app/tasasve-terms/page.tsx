@@ -144,7 +144,7 @@ const TasasveTermsPage = () => {
                   Si tiene alguna pregunta o inquietud sobre estos Términos y
                   Condiciones, por favor contáctenos a través de:{" "}
                   <span className="text-[#FA812F]">
-                    rafael@molina-aquino.com
+                    tasasvesoporte@gmail.com
                   </span>
                 </p>
               </section>
